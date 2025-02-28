@@ -540,13 +540,13 @@ export default {
 					githubLink: 'https://github.com/Skullage/Saka'
 				},
 				{
-					title: 'Hangman',
+					title: 'Play Together',
 					desc: this.$t('projectDesc5'),
 					stack:
 						'HTML, CSS, JavaScript, Vue 3, Vuex, Vue router, Tailwind CSS, Socket.io, Node JS, Express, Vite',
 					date: '2023',
 					preview: '',
-					href: 'https://hangman-tan-pi.vercel.app',
+					href: 'http://play-together.ru',
 					images: [
 						'hangman/1.png',
 						'hangman/2.png',

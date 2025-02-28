@@ -192,15 +192,15 @@
 					{{ $t('myProjects') }}
 				</h2>
 				<div
-					class="mx-auto grid gap-y-16 gap-x-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+					class="mx-auto grid gap-x-8 gap-y-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 				>
 					<div
-						class="portfolio__card card slide-right cursor-pointer border p-4"
+						class="portfolio__card card slide-right flex cursor-pointer flex-col border p-4"
 						v-for="(item, index) in projects"
 						:key="index"
 						@click="showProjectInfo(index)"
 					>
-						<div class="card__image-wrapper overflow-hidden">
+						<div class="card__image-wrapper flex-1 overflow-hidden">
 							<nuxt-img
 								:src="`/img/portfolio/${item.preview}`"
 								:alt="`Превью ${item.title}`"
@@ -232,13 +232,13 @@
 								icon="fa6-solid:xmark"
 								height="30"
 								width="30"
-								class="xmark absolute top-1/2 right-0 -mt-2 hidden h-4 pr-4 text-red-500"
+								class="xmark absolute right-0 top-1/2 -mt-2 hidden h-4 pr-4 text-red-500"
 							/>
 							<Icon
 								icon="material-symbols:check"
 								height="30"
 								width="30"
-								class="check absolute top-1/2 right-0 -mt-2 hidden h-4 pr-4 text-green-600"
+								class="check absolute right-0 top-1/2 -mt-2 hidden h-4 pr-4 text-green-600"
 							/>
 						</div>
 						<div class="contact-form__input-wrapper relative">
@@ -252,13 +252,13 @@
 								icon="fa6-solid:xmark"
 								height="30"
 								width="30"
-								class="xmark absolute top-1/2 right-0 -mt-2 hidden h-4 pr-4 text-red-500"
+								class="xmark absolute right-0 top-1/2 -mt-2 hidden h-4 pr-4 text-red-500"
 							/>
 							<Icon
 								icon="material-symbols:check"
 								height="30"
 								width="30"
-								class="check absolute top-1/2 right-0 -mt-2 hidden h-4 pr-4 text-green-600"
+								class="check absolute right-0 top-1/2 -mt-2 hidden h-4 pr-4 text-green-600"
 							/>
 						</div>
 

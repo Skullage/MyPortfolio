@@ -6,12 +6,12 @@
 				id="about"
 				v-intersection
 			>
-				<div class="hello__text slide-right max-lg:order-1">
+				<div class="hello__text slide-right max-lg:order-1 basis-1/2">
 					<div class="about mb-8">
 						<h2 class="mb-3 text-3xl font-bold dark:text-white">
 							{{ $t('greeting') }}
 						</h2>
-						<p class="dark:text-white">{{ $t('prof') }}</p>
+						<p class="dark:text-white" v-html="$t('prof')"></p>
 					</div>
 					<div class="contacts mb-10">
 						<div class="contacts__phone mb-1 flex gap-x-3">
@@ -93,11 +93,11 @@
 						</a>
 					</div>
 				</div>
-				<div class="hello__photo-wrapper slide-left">
+				<div class="hello__photo-wrapper slide-left flex-1">
 					<nuxt-img
 						src="/img/myPhoto.png"
 						alt="Мое фото"
-						class="h-full rounded"
+						class="h-auto rounded w-full"
 						format="webp"
 					/>
 				</div>
@@ -379,7 +379,7 @@ export default {
 			let result = [];
 			let buf = [];
 			this.projects.forEach(el => {
-				buf = el.images.filter(item => item != el.images[0]);
+				buf = el.images.filter(item => item !== el.images[0]);
 				result.push(buf);
 			});
 			return result;
@@ -413,6 +413,16 @@ export default {
 					stars: 5,
 					iconName: 'logos:vue'
 				},
+        {
+          title: 'Vuex',
+          stars: 5,
+          iconName: 'logos:vue'
+        },
+        {
+          title: 'Pinia',
+          stars: 5,
+          iconName: 'logos:pinia'
+        },
 				{
 					title: 'Nuxt',
 					stars: 5,
@@ -424,9 +434,9 @@ export default {
 					iconName: 'icon-park:github'
 				},
 				{
-					title: 'Gulp',
+					title: 'Socket.io',
 					stars: 5,
-					iconName: 'logos:gulp'
+					iconName: 'logos:socket-io'
 				},
 				{
 					title: 'Tailwind CSS',
@@ -554,12 +564,25 @@ export default {
 						'hangman/4.png'
 					],
 					githubLink: 'https://github.com/Skullage/hangman'
-				}
+				},
+        {
+          title: 'Portfolio Telegram Bot',
+          desc: this.$t('projectDesc6'),
+          stack:
+              'JavaScript, Node JS, Node-telegram-bot-api',
+          date: '2025',
+          preview: '',
+          href: 'https://t.me/dogonadze_bot',
+          images: [
+            'portbot/1.png'
+          ],
+          githubLink: 'https://github.com/Skullage/portfoliobot'
+        }
 			]
 		};
 	},
 	watch: {
-		'$i18n.locale'(newVal, oldVal) {
+		'$i18n.locale'() {
 			this.softSkills = [
 				this.$t('responsibility'),
 				this.$t('attentiveness'),
